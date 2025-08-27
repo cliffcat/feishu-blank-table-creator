@@ -243,7 +243,7 @@ function App() {
         <span>作者: 隐公子</span>
         <span style={{ margin: '0 8px' }}>•</span>
         <a 
-           href="https://space.bilibili.com/448701860?spm_id_from=333.40164.0.0" 
+           href="https://haloeffect.feishu.cn/share/base/form/shrcngPFlWQnIGKoepw11C9EJah" 
            target="_blank" 
            rel="noopener noreferrer"
            style={{ color: '#999', textDecoration: 'none' }}
