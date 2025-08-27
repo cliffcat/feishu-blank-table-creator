@@ -1,0 +1,33 @@
+{
+  "id": "blank_table_creator",
+  "name": "批量创建空白表",
+  "version": "1.0.0",
+  "description": "快速批量创建空白表格的飞书多维表格插件",
+  "author": {
+    "name": "开发者",
+    "email": "developer@example.com"
+  },
+  "icon": "./icon.png",
+  "main": "./dist/index.html",
+  "type": "sidebar",
+  "permissions": [
+    "base:read",
+    "base:write",
+    "table:read",
+    "table:write"
+  ],
+  "engines": {
+    "lark-base": ">=1.0.0"
+  },
+  "categories": ["productivity", "utility"],
+  "keywords": ["表格", "批量创建", "空白表", "效率工具"],
+  "homepage": "https://github.com/example/blank-table-creator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/blank-table-creator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/example/blank-table-creator/issues"
+  },
+  "license": "MIT"
+}

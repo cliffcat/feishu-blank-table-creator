@@ -1,0 +1,34 @@
+{
+  "name": "blank-table-creator",
+  "version": "1.0.0",
+  "description": "飞书多维表格批量创建空白表插件",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 3000",
+    "vercel-build": "npm run build"
+  },
+  "keywords": [
+    "feishu",
+    "bitable",
+    "plugin",
+    "table",
+    "creator"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@lark-base-open/js-sdk": "^0.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^4.4.0"
+  }
+}

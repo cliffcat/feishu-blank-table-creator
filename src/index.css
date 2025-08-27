@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #1f2329;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  padding: 16px;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2329;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e5e6eb;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #00d4aa;
+  box-shadow: 0 0 0 2px rgba(0, 212, 170, 0.1);
+}
+
+.form-input.error {
+  border-color: #f54a45;
+}
+
+.error-message {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #f54a45;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: #00d4aa;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #00b894;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status-message {
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.status-success {
+  background-color: #f0f9f6;
+  color: #00875a;
+  border: 1px solid #b3f5d1;
+}
+
+.status-error {
+  background-color: #fff2f0;
+  color: #d93026;
+  border: 1px solid #ffbdad;
+}
+
+.status-info {
+  background-color: #f0f8ff;
+  color: #0052cc;
+  border: 1px solid #b3d4ff;
+}
+
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
