@@ -8,7 +8,7 @@
     "email": "developer@example.com"
   },
   "icon": "./icon.png",
-  "main": "https://feishu-blank-table-creator-1uhkzlwse-cliffcats-projects.vercel.app/",
+  "main": "https://blank-table-creator-qphhv2w8e-cliffcats-projects.vercel.app/",
   "type": "sidebar",
   "permissions": [
     "base:read",
