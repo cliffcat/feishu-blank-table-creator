@@ -8,7 +8,7 @@
     "email": "developer@example.com"
   },
   "icon": "./icon.png",
-  "main": "./dist/index.html",
+  "main": "https://feishu-blank-table-creator.vercel.app/",
   "type": "sidebar",
   "permissions": [
     "base:read",
@@ -21,13 +21,13 @@
   },
   "categories": ["productivity", "utility"],
   "keywords": ["表格", "批量创建", "空白表", "效率工具"],
-  "homepage": "https://github.com/example/blank-table-creator",
+  "homepage": "https://github.com/cliffcat/feishu-blank-table-creator",
   "repository": {
     "type": "git",
-    "url": "https://github.com/example/blank-table-creator.git"
+    "url": "https://github.com/cliffcat/feishu-blank-table-creator.git"
   },
   "bugs": {
-    "url": "https://github.com/example/blank-table-creator/issues"
+    "url": "https://github.com/cliffcat/feishu-blank-table-creator/issues"
   },
   "license": "MIT"
 }
