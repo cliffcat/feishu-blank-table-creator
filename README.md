@@ -1,29 +1,32 @@
-# 飞书多维表格批量创建空白表插件
+# 飞书空白表格创建器 🚀
 
-一个用于飞书多维表格的边栏插件，可以快速批量创建空白表格。
+一个高效的飞书多维表格边栏插件，支持批量创建空白表格，提升工作效率。
 
-## 功能特性
+## ✨ 功能特性
 
-- 🚀 **批量创建**: 一次性创建多个空白表格
-- 📝 **智能命名**: 自动按照"空白表1"、"空白表2"格式命名
-- 🔍 **重名检测**: 自动跳过已存在的表格名称
-- ✅ **输入验证**: 实时验证输入数量的合法性
-- 📊 **进度反馈**: 显示创建进度和结果状态
-- 🎨 **现代界面**: 简洁美观的用户界面
+- 🔢 **批量创建**：支持一次性创建多个空白表格
+- 🏷️ **智能命名**：自动按"空白表1"、"空白表2"格式命名
+- 🔍 **重复检测**：自动检测并跳过重复名称
+- ✅ **实时验证**：输入内容实时验证，防止错误操作
+- 👍 **点赞功能**：支持用户点赞，数据本地持久化
+- 📝 **反馈渠道**：集成飞书表单，便于用户反馈
+- 📱 **响应式设计**：适配不同屏幕尺寸
 
-## 使用方法
+## 📋 使用说明
 
 1. 在飞书多维表格中打开插件
-2. 输入要创建的表格数量（1-100）
+2. 输入要创建的表格数量（正整数）
 3. 点击"创建表格"按钮
-4. 等待创建完成，查看结果反馈
+4. 系统自动创建并命名表格
+5. 查看创建结果反馈
 
-## 技术栈
+## 🛠️ 技术栈
 
-- **前端框架**: React 18 + TypeScript
-- **构建工具**: Vite
-- **SDK**: @lark-base-open/js-sdk ^0.5.0
-- **样式**: 原生CSS（飞书设计规范）
+- **前端框架**：React 18 + TypeScript
+- **构建工具**：Vite
+- **样式**：CSS3 + 响应式设计
+- **API**：飞书开放平台 API
+- **存储**：localStorage（点赞数据持久化）
 
 ## 开发指南
 
@@ -54,89 +57,71 @@ npm run build
 
 构建产物将输出到 `dist` 目录
 
-### 项目结构
+## 📦 项目结构
 
 ```
 ├── src/
 │   ├── App.tsx          # 主应用组件
 │   ├── main.tsx         # 应用入口
 │   └── index.css        # 全局样式
-├── dist/                # 构建输出目录
 ├── manifest.json        # 插件配置文件
-├── icon.png            # 插件图标
-├── package.json        # 项目配置
-├── vite.config.ts      # Vite配置
-└── tsconfig.json       # TypeScript配置
+├── icon.svg            # 插件图标
+├── index.html          # 插件入口页面
+└── dist/               # 构建输出目录
 ```
 
-## 插件配置
+## 🚀 快速开始
 
-### 权限设置
+### 开发环境
 
-插件需要以下权限：
-- `base:read` - 读取多维表格信息
-- `base:write` - 创建新表格
-- `table:read` - 读取表格元数据
-- `table:write` - 写入表格数据
+```bash
+# 安装依赖
+npm install
 
-### 部署到飞书
+# 启动开发服务器
+npm run dev
 
-1. 构建生产版本：`npm run build`
-2. 将 `dist` 目录和 `manifest.json` 打包
-3. 在飞书开放平台上传插件包
-4. 配置插件权限和发布设置
-
-## 核心功能实现
-
-### 表格命名逻辑
-
-```typescript
-const generateUniqueTableNames = (count: number, existingNames: Set<string>): string[] => {
-  const names: string[] = [];
-  let index = 1;
-  
-  while (names.length < count) {
-    const candidateName = `空白表${index}`;
-    if (!existingNames.has(candidateName)) {
-      names.push(candidateName);
-    }
-    index++;
-  }
-  
-  return names;
-};
+# 构建项目
+npm run build
 ```
 
-### 批量创建表格
+### 插件安装
 
-```typescript
-const createTables = async () => {
-  const existingNames = await getExistingTableNames();
-  const tableNames = generateUniqueTableNames(tableCount, existingNames);
-  
-  const results = await Promise.allSettled(
-    tableNames.map(name => createSingleTable(name))
-  );
-  
-  // 处理创建结果...
-};
-```
+1. 下载发布包：`blank_table_creator_v1.0.zip` (994KB)
+2. 在飞书开放平台上传插件包
+3. 按照飞书插件发布流程进行审核
 
-## 注意事项
+## 🎯 核心功能
 
-- 每次最多创建100个表格
-- 表格名称遇到重复会自动跳过序号
-- 每个新建表格默认包含一个文本字段
-- 需要在飞书多维表格环境中运行
+### 批量创建逻辑
+- 输入验证：只允许正整数
+- 命名规则："空白表" + 数字后缀
+- 重复处理：自动跳过已存在的名称
+- 进度反馈：实时显示创建状态
 
-## 许可证
+### 用户体验优化
+- 实时输入验证和错误提示
+- 加载状态显示
+- 成功/失败反馈
+- 点赞功能增强用户参与度
+
+## 📊 发布信息
+
+- **版本**：v1.0
+- **发布日期**：2025-01-27
+- **文件大小**：994KB（压缩后）
+- **兼容性**：现代浏览器
+
+## 🔗 相关链接
+
+- **在线预览**：[https://blank-table-creator-o8c6pwec0-cliffcats-projects.vercel.app](https://blank-table-creator-o8c6pwec0-cliffcats-projects.vercel.app)
+- **反馈表单**：[https://haloeffect.feishu.cn/share/base/form/shrcngPFlWQnIGKoepw11C9EJah](https://haloeffect.feishu.cn/share/base/form/shrcngPFlWQnIGKoepw11C9EJah)
+
+## 👨‍💻 开发者
+
+- **作者**：隐公子
+- **联系方式**：通过反馈表单联系
+
+## 📄 许可证
 
 MIT License
-
-## 更新日志
-
-### v1.0.0
-- 初始版本发布
-- 支持批量创建空白表格
-- 实现智能命名和重名检测
-- 添加输入验证和错误处理
