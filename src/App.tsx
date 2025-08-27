@@ -153,7 +153,7 @@ function App() {
       
       <div className="form-group">
         <label className="form-label" htmlFor="tableCount">
-          创建表格数量
+          创建表格数量（最大100个）
         </label>
         <input
           id="tableCount"
@@ -190,7 +190,7 @@ function App() {
       <div style={{ marginTop: '20px', fontSize: '12px', color: '#8f959e' }}>
         <p>• 表格将按照"空白表1"、"空白表2"的格式命名</p>
         <p>• 如遇重名会自动跳过序号</p>
-        <p>• 每个表格默认包含一行一列</p>
+        <p>• 每个表格默认包含一列</p>
       </div>
     </div>
   );

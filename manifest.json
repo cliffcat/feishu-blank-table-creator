@@ -7,7 +7,7 @@
     "name": "开发者",
     "email": "developer@example.com"
   },
-  "icon": "./icon.png",
+  "icon": "./icon.svg",
   "main": "https://blank-table-creator.vercel.app/",
   "type": "sidebar",
   "permissions": [
