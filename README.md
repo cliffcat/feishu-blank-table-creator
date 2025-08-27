@@ -22,7 +22,7 @@
 
 - **前端框架**: React 18 + TypeScript
 - **构建工具**: Vite
-- **SDK**: @lark-base-open/js-sdk ^0.5.0 <mcreference link="https://www.npmjs.com/package/@lark-base-open/js-sdk" index="1">1</mcreference>
+- **SDK**: @lark-base-open/js-sdk ^0.5.0
 - **样式**: 原生CSS（飞书设计规范）
 
 ## 开发指南
