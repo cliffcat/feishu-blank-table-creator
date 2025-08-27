@@ -11,6 +11,8 @@ function App() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [statusMessage, setStatusMessage] = useState<StatusMessage | null>(null);
   const [inputError, setInputError] = useState<string>('');
+  const [likeCount, setLikeCount] = useState<number>(104);
+  const [hasLiked, setHasLiked] = useState<boolean>(false);
 
   // 验证输入
   const validateInput = (value: number): string => {
@@ -147,9 +149,36 @@ function App() {
 
   return (
     <div className="container">
-      <h2 style={{ marginBottom: '24px', fontSize: '18px', fontWeight: '600' }}>
-        批量创建空白表
-      </h2>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+        <h2 style={{ fontSize: '18px', fontWeight: '600', margin: 0 }}>
+          批量创建空白表
+        </h2>
+        <button
+          onClick={() => {
+            if (!hasLiked) {
+              setLikeCount(prev => prev + 1);
+              setHasLiked(true);
+            }
+          }}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px',
+            padding: '4px 8px',
+            border: 'none',
+            borderRadius: '4px',
+            backgroundColor: hasLiked ? '#f0f0f0' : 'transparent',
+            color: hasLiked ? '#666' : '#333',
+            cursor: hasLiked ? 'default' : 'pointer',
+            fontSize: '12px',
+            transition: 'all 0.2s ease'
+          }}
+          disabled={hasLiked}
+        >
+          <span style={{ fontSize: '14px' }}>👍</span>
+          <span>{likeCount}</span>
+        </button>
+      </div>
       
       <div className="form-group">
         <label className="form-label" htmlFor="tableCount">
@@ -191,6 +220,21 @@ function App() {
         <p>• 表格将按照"空白表1"、"空白表2"的格式命名</p>
         <p>• 如遇重名会自动跳过序号</p>
         <p>• 每个表格默认包含一列</p>
+      </div>
+      
+      <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid #e5e5e5', fontSize: '11px', color: '#999', textAlign: 'center' }}>
+        <span>作者: 隐公子</span>
+        <span style={{ margin: '0 8px' }}>•</span>
+        <a 
+           href="https://space.bilibili.com/448701860?spm_id_from=333.40164.0.0" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           style={{ color: '#999', textDecoration: 'none' }}
+           onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#666'}
+           onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#999'}
+         >
+           联系反馈
+         </a>
       </div>
     </div>
   );
