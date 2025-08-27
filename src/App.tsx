@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { bitable } from '@lark-base-open/js-sdk';
 
 interface StatusMessage {
@@ -13,6 +13,19 @@ function App() {
   const [inputError, setInputError] = useState<string>('');
   const [likeCount, setLikeCount] = useState<number>(104);
   const [hasLiked, setHasLiked] = useState<boolean>(false);
+
+  // 初始化时从localStorage读取点赞数据
+  useEffect(() => {
+    const savedLikeCount = localStorage.getItem('blank-table-creator-like-count');
+    const savedHasLiked = localStorage.getItem('blank-table-creator-has-liked');
+    
+    if (savedLikeCount) {
+      setLikeCount(parseInt(savedLikeCount));
+    }
+    if (savedHasLiked === 'true') {
+      setHasLiked(true);
+    }
+  }, []);
 
   // 验证输入
   const validateInput = (value: number): string => {
@@ -156,8 +169,12 @@ function App() {
         <button
           onClick={() => {
             if (!hasLiked) {
-              setLikeCount(prev => prev + 1);
+              const newCount = likeCount + 1;
+              setLikeCount(newCount);
               setHasLiked(true);
+              // 保存到localStorage
+              localStorage.setItem('blank-table-creator-like-count', newCount.toString());
+              localStorage.setItem('blank-table-creator-has-liked', 'true');
             }
           }}
           style={{
