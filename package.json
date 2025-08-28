@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "飞书多维表格批量创建空白表插件",
   "main": "index.js",
+  "output": "dist",
   "workspaces": [
     ".",
     "api"
